@@ -14,12 +14,13 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: my-frontend:1.0
+        image: myfrontend:1.0
+        imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 5173
+        - containerPort: 80
         env:
         - name: VITE_API_BASE_URL
-          value: "http://backend-service:8000"
+          value: "http://192.168.49.2:30080"
 ---
 apiVersion: v1
 kind: Service
@@ -30,6 +31,7 @@ spec:
     app: frontend
   ports:
     - protocol: TCP
-      port: 5173
-      targetPort: 5173
+      port: 80
+      targetPort: 80
   type: NodePort
+
