@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: backend
-        image: my-backend:1.0
+        image: mybackend:1.0
+        imagePullPolicy: IfNotPresent 
         ports:
         - containerPort: 8000
         env:
@@ -34,4 +35,5 @@ spec:
     - protocol: TCP
       port: 8000
       targetPort: 8000
-  type: ClusterIP
+      nodePort: 30080
+  type: NodePort

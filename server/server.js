@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 
 const app = express();
 dotenv.config();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT ;
 const mongoURI = process.env.MONGODB_URI;
 
 
@@ -25,7 +25,7 @@ app.use(limiter);
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "*",
   methods: ["GET", "POST"],
   credentials: true
 }));

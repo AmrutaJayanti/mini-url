@@ -8,7 +8,7 @@ function App() {
   const [shortUrl, setShortUrl] = useState('');
   const [stats, setStats] = useState(null);
 
-  const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 
   //Debouncing
